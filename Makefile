@@ -19,8 +19,13 @@ remove-environment: # remove mamba environment
 
 build-dbt:
 	cd $(DBT_PROJECT_DIR)
-	dbt build --profiles-dir config
+	dbt build
 
 run-dbt:
 	cd $(DBT_PROJECT_DIR)
-	dbt run --profiles-dir config
+	dbt run
+
+debug-dbt:
+	cd $(DBT_PROJECT_DIR)
+	dbt debug
+
