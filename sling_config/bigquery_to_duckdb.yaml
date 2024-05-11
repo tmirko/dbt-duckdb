@@ -1,0 +1,14 @@
+source: BIGQUERY
+target: DUCKDB_DEV
+
+defaults:
+  mode: full-refresh
+
+streams:
+  bigquery-public-data.google_trends.international_top_terms:
+    sql: |
+      SELECT *
+      FROM bigquery-public-data.google_trends.international_top_terms 
+      WHERE 
+      country_name = 'United Kingdom'
+    object: international_top_terms
